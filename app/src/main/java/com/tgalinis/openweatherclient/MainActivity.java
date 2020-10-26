@@ -216,6 +216,7 @@ public class MainActivity extends AppCompatActivity {
                         },
 
                         REQUEST_CODE_PERMISSION);
+                return;
             }
 
             locationClient.getLastLocation()
