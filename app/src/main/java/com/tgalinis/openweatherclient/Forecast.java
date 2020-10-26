@@ -3,10 +3,6 @@ package com.tgalinis.openweatherclient;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 /**
  * Can't pass around Java objects trivially between Activities. After doing some
  * digging, I found a useful StackOverflow post on Parcelables.
@@ -100,7 +96,7 @@ public class Forecast implements Parcelable {
      * with the reads done in the constructor accepting a Parcel.
      *
      * @param dest The destination of the serialized Forecast.
-     * @param flags No idea what this is honestly ¯\_(ツ)_/¯
+     * @param flags No idea what this is for honestly ¯\_(ツ)_/¯
      */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -122,6 +118,8 @@ public class Forecast implements Parcelable {
 
     //--------------------------------------------------------------------------
     // Accessor methods
+    //
+    // Other than getting the wind direction, these are very straight-forward.
     //--------------------------------------------------------------------------
 
     public double getTemperature() {

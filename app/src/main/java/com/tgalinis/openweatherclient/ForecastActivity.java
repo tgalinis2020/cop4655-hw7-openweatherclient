@@ -119,11 +119,12 @@ public class ForecastActivity extends AppCompatActivity {
                 forecast.getWindDirection(),
                 forecast.getWindSpeed()));
 
+        // Update the map fragment to show the desired location.
         mapsFragment.update(forecast.getCity(), lat, lon);
 
         if (lat < 0) {
             lat *= -1;  // Convert to a positive number
-            y = "S";    // Change direction
+            y = "S";    // Reverse direction
         }
 
         if (lon < 0) {

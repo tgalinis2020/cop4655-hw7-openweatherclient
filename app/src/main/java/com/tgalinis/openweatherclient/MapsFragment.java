@@ -39,6 +39,9 @@ public class MapsFragment extends Fragment {
      * Instead of rendering the map when the view is created, I've moved the logic
      * here so I can update the map on-the-fly from ForecastActivity.
      *
+     * Not sure if this is the proper way to approach this problem but... it
+     * works!
+     *
      * @param loc city name
      * @param lat Latitude
      * @param lon Longitude

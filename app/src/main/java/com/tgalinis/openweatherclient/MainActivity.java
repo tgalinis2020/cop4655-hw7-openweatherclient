@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     //--------------------------------------------------------------------------
 
     /**
-     * If OpenWeather successfully responds to a request, deserialize returned
+     * If OpenWeather successfully responds to a request, unserialize returned
      * JSON to an instance of the Forecast class and pass it to the
      * ForecastActivity via an intent.
      */
