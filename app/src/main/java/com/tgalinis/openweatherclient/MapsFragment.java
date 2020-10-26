@@ -18,6 +18,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.Locale;
+
 public class MapsFragment extends Fragment {
 
     @Nullable
@@ -31,14 +33,25 @@ public class MapsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-   }
+    }
 
+    /**
+     * Instead of rendering the map when the view is created, I've moved the logic
+     * here so I can update the map on-the-fly from ForecastActivity.
+     *
+     * @param loc city name
+     * @param lat Latitude
+     * @param lon Longitude
+     */
     public void update(final String loc, final double lat, final double lon) {
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
                 .findFragmentById(R.id.map);
 
         // Make sure the fragment exists before trying to do anything with it.
         if (mapFragment == null) {
+            Toast.makeText(this.getActivity(),
+                    "Map is not available! This should not happen. :(",
+                    Toast.LENGTH_LONG).show();
             return;
         }
 

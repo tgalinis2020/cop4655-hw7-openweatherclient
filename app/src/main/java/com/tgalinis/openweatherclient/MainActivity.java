@@ -85,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject wind = res.getJSONObject("wind");
                 JSONObject sys = res.getJSONObject("sys");
 
+                // Forward the forecast data to the ForecastActivity via
+                // an Intent's extra.
                 intent.putExtra(EXTRA_FORECAST, new Forecast(
                         main.getDouble("temp"),
                         main.getDouble("feels_like"),
@@ -101,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                         coords.getDouble("lat"),
                         coords.getDouble("lon")));
 
-                MainActivity.this.startActivity(intent);
+                startActivity(intent);
 
             } catch (JSONException e) {
 
@@ -214,7 +216,6 @@ public class MainActivity extends AppCompatActivity {
                         },
 
                         REQUEST_CODE_PERMISSION);
-                return;
             }
 
             locationClient.getLastLocation()
@@ -262,7 +263,8 @@ public class MainActivity extends AppCompatActivity {
      * StackOverflow post helped me find a way to retrieve it so I can use it
      * to make requests:
      *
-     * https://stackoverflow.com/questions/19379349/android-get-manifest-meta-data-out-of-activity
+     * https://stackoverflow.com/questions/19379349/android-get-manifest-meta-
+     * data-out-of-activity
      *
      * @param params Query parameters in key=value form
      */

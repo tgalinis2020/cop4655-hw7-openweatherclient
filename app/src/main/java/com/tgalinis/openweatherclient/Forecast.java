@@ -11,7 +11,8 @@ import org.json.JSONObject;
  * Can't pass around Java objects trivially between Activities. After doing some
  * digging, I found a useful StackOverflow post on Parcelables.
  *
- * https://stackoverflow.com/questions/2139134/how-to-send-an-object-from-one-android-activity-to-another-using-intents
+ * https://stackoverflow.com/questions/2139134/how-to-send-an-object-from-one-
+ * android-activity-to-another-using-intents
  */
 public class Forecast implements Parcelable {
     public static final String[] COMPASS_SECTORS = {

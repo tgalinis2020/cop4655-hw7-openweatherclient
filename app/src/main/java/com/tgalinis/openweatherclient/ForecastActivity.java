@@ -49,20 +49,25 @@ public class ForecastActivity extends AppCompatActivity {
         final ImageView conditionImage = findViewById(R.id.conditionImage);
         final MapsFragment mapsFragment = (MapsFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.mapsFragment);
+
+        // OpenWeather provides companion icons. Condition codes are mapped to
+        // them.
         final String imgUrl = "https://openweathermap.org/img/wn/" +
                 forecast.getConditionCode() +"@2x.png";
+
         double lat = forecast.getLatitude();
         double lon = forecast.getLongitude();
-        String x = "N"; // North or South
-        String y = "E"; // East or West
+        String y = "N"; // North (positive) or South (negative)
+        String x = "E"; // East (positive) or West (negative)
 
-
+        // Give the image a nice blue background like the one in Homework 4.
         conditionImage.setBackgroundColor(Color.parseColor("#6AA6D4"));
 
         // Was getting errors while trying to download the image. The following
         // StackOverflow post pointed me to the right direction:
         //
-        // https://stackoverflow.com/questions/22395417/error-strictmodeandroidblockguardpolicy-onnetwork
+        // https://stackoverflow.com/questions/22395417/error-
+        // strictmodeandroidblockguardpolicy-onnetwork
         //
         // Makes sense I suppose. The image isn't immediately available so the
         // process of fetching it should be in its own asynchronous thread.
@@ -118,16 +123,16 @@ public class ForecastActivity extends AppCompatActivity {
         mapsFragment.update(forecast.getCity(), lat, lon);
 
         if (lat < 0) {
-            lat *= -1; // Convert to a positive number
-            x = "S"; // Change direction
+            lat *= -1;  // Convert to a positive number
+            y = "S";    // Change direction
         }
 
         if (lon < 0) {
             lon *= -1;
-            y = "W";
+            x = "W";
         }
 
         coordinates.setText(String.format(Locale.US,
-                "%.2f\u00B0 %s %.2f\u00B0 %s", lat, x, lon, y));
+                "%.2f\u00B0 %s %.2f\u00B0 %s", lat, y, lon, x));
     }
 }
