@@ -4,7 +4,9 @@
 
     To get one, follow this link, follow the directions and press "Create" at the end:
 
-    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=46:C3:5B:0D:44:1D:1B:DC:FE:02:80:75:9B:F7:E3:B7:96:CE:EF:14%3Bcom.tgalinis.openweatherclient
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_
+    backend&keyType=CLIENT_SIDE_ANDROID&r=46:C3:5B:0D:44:1D:1B:DC:FE:02:80:75:
+    9B:F7:E3:B7:96:CE:EF:14%3Bcom.tgalinis.openweatherclient
 
     You can also add your credentials to an existing key, using these values:
 
@@ -20,5 +22,8 @@
     Once you have your key (it starts with "AIza"), replace the "google_maps_key"
     string in this file.
     -->
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyD00e6Fa7Y_n0LO6kaEzFDoEFWQ5fDcOvM</string>
+    <string
+        name="google_maps_key"
+        templateMergeStrategy="preserve"
+        translatable="false">AIzaSyD00e6Fa7Y_n0LO6kaEzFDoEFWQ5fDcOvM</string>
 </resources>
