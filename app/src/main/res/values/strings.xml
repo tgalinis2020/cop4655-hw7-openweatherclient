@@ -8,5 +8,8 @@
     <string name="ui_pressure_text">Pressure</string>
     <string name="ui_wind_text">Wind</string>
     <string name="ui_coordinates_text">Coordinates</string>
+    <string name="author_name">Thomas Galinis</string>
+    <string name="author_znumber">Z23546211</string>
+    <string name="course">COP4655 Fall 2020</string>
     <string name="forecast_icon">Current weather conditions</string>
 </resources>
